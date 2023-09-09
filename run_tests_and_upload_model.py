@@ -45,13 +45,14 @@ def run_tests_and_upload_model(model_dir_path):
 
             # Los tests pasaron, verifica y guarda el modelo si es necesario
             model_path = model_dir_path + f'/{model_name}'
+            hiper_path = model_dir_path + f'/{hiper_name}'
             
             if not is_model_uploaded(model_name):
                 # Guarda el modelo en el bucket de almacenamiento
                 upload_file(model_path)
 
                 # Guarda hiperparametros
-                upload_file(model_path)
+                upload_file(hiper_path)
 
                 # Retornar al directorio raiz
                 os.chdir('../')
@@ -108,3 +109,4 @@ if __name__ == "__main__":
         run_tests_and_upload_model(model_dir_path)
 
 
+#
