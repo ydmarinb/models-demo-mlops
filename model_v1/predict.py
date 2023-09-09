@@ -13,6 +13,8 @@ def make_prediction(input_data:list):
     new_variables = [input_data]
     return int(rf.predict(new_variables)[0])
 
+# otro
+
 
 # prueba
 
